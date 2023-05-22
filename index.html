@@ -243,7 +243,7 @@
 
   <main id="main">
 
-    <center><section style="height: 80em; width: 120em;">
+    <center><section id="mySection">
 
       <iframe src="https://online.fliphtml5.com/aoqdf/avpu/#p=7"
               frameborder="0" 
@@ -255,6 +255,27 @@
       </iframe>
 
     </section></center>
+
+    <script>
+      function updateSectionSize() {
+        var section = document.getElementById('mySection');
+        var windowWidth = window.innerWidth;
+    
+        if (windowWidth < 600) {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 4 / 3) + 'px';
+        } else if (windowWidth > 900) {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 9 / 8.5) + 'px';
+        } else {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 8 / 7) + 'px';
+        }
+      }
+    
+      window.addEventListener('resize', updateSectionSize);
+      updateSectionSize();
+    </script>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
