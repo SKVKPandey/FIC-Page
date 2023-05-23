@@ -9,6 +9,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
@@ -54,7 +56,12 @@
             border: none;
         }
 
-        .dropdown-menu.center {
+        .dropdown-menu.center1 {
+            left: -0.3% !important;
+            transform: translateX(50%);
+        }
+
+        .dropdown-menu.center2 {
             left: -1.5% !important;
             transform: translateX(50%);
         }
@@ -151,9 +158,17 @@
 
     </style>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
       function changeIframeSrc(src) {
-        document.getElementById('myIframe').src = src;
+        document.getElementById('FinceptionIframe').src = src;
+      }
+    </script>
+
+    <script>
+      function changeIframeSrc(src) {
+        document.getElementById('ReportIframe').src = src;
       }
     </script>
 
@@ -178,9 +193,7 @@
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Parcham</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Page</a></li>
               <li><a href="https://www.instagram.com/project.parcham/">Instagram</a></li>
-              <li><a href="#">Facebook</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Our Publications</span> <i class="bi bi-chevron-down"></i></a>
@@ -189,7 +202,6 @@
               <li><a href="#Finception">Finception</a></li>
               <li><a href="https://ficarsd19.wordpress.com/">FIC Blog</a></li>
               <li><a href="https://open.spotify.com/show/0o3f4G8SFqz1g5S59zJxUu">Cents & Sense</a></li>
-              
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -217,7 +229,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             
-            <h3><a href="">Reports</a></h3>
+            <h3><a href="#Reports">Reports</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -228,7 +240,12 @@
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
-            <h3><a href="https://ficarsd19.wordpress.com/">Blogs</a></h3>
+            <h3><a href="#Blogs">Blog</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <h3><a href="#SocialMedia">Social Media</a></h3>
           </div>
         </div>
    
@@ -239,14 +256,61 @@
 
   <main id="main">
 
-    <center><section id="Finception">
+    <center><section id="Reports">
 
-      <h1>Finception
+      <h1 style="align-content: center;">Reports
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Select Edition
         </a>
-        <ul class="dropdown-menu center">
+        <ul class="dropdown-menu center1">
+          <li><center><a class="dropdown-item")">Upcoming</a></center></li>
+          <li><center><a class="dropdown-item")">Upcoming</a></center></li>
+          <li><center><a class="dropdown-item")">Upcoming</a></center></li>
+          <li><center><a class="dropdown-item")">Upcoming</a></center></li>
+        </ul>
+      </div></h1>
+
+      <iframe id="ReportIframe"
+              src=""
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0" 
+              width="100%" 
+              height="100%" 
+              scrolling="auto">
+      </iframe>
+    </section></center>
+
+    <script>
+      function updateSectionSize() {
+        var section = document.getElementById('Report');
+        var windowWidth = window.innerWidth;
+    
+        if (windowWidth < 600) {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 5 / 3) + 'px';
+        } else if (windowWidth > 900) {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 9 / 8.5) + 'px';
+        } else {
+          section.style.width = windowWidth + 'px';
+          section.style.height = (windowWidth * 8 / 7) + 'px';
+        }
+      }
+    
+      window.addEventListener('resize', updateSectionSize);
+      updateSectionSize();
+    </script>
+
+    <center><section id="Finception">
+
+      <h1 style="align-content: center;">Finception
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Select Edition
+        </a>
+        <ul class="dropdown-menu center2">
           <li><center><a class="dropdown-item" onclick="changeIframeSrc('https://online.fliphtml5.com/aoqdf/avpu/')">December-January 2023</a></center></li>
           <li><center><a class="dropdown-item" onclick="changeIframeSrc('https://online.fliphtml5.com/wzqec/lpuu/')">October-November 2022</a></center></li>
           <li><center><a class="dropdown-item" onclick="changeIframeSrc('https://fliphtml5.com/wzqec/qxvy/')">August-September 2022</a></center></li>
@@ -254,7 +318,7 @@
         </ul>
       </div></h1>
 
-      <iframe id="myIframe"
+      <iframe id="FinceptionIframe"
               src="https://online.fliphtml5.com/aoqdf/avpu"
               frameborder="0" 
               marginheight="0" 
@@ -286,6 +350,144 @@
       updateSectionSize();
     </script>
 
+    <center><section id="Blogs">
+
+      <h1>Blog
+      <div class="dropdown">
+
+      <iframe id="BlogsIframe"
+              src="https://ficarsd19.wordpress.com/"
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0"
+              scrolling="auto">
+      </iframe>
+
+      <button type="button" class="btn btn-secondary" id="BlogBtn">Visit Site</button>
+    </section></center>
+
+    <script>
+      $(document).ready(function() {
+        adjustSectionWidth();
+        adjustIframeHeight();
+  
+        $(window).resize(function() {
+          adjustSectionWidth();
+          adjustIframeHeight();
+        });
+  
+        function adjustSectionWidth() {
+          var windowWidth = $(window).width();
+          $('#Blogs').css('width', windowWidth);
+        }
+  
+        function adjustIframeHeight() {
+          var windowHeight = $(window).height();
+          var windowWidth = $(window).width();
+          var iframeHeight = windowHeight; // Set the desired height of the iframe
+          var iframeWidth = windowWidth;
+          $('#BlogsIframe').height(iframeHeight);
+          $('#BlogsIframe').width(iframeWidth);
+        }
+
+        $('#BlogBtn').click(function() {
+        window.open('https://ficarsd19.wordpress.com/', '_blank');
+      });
+      });
+    </script>
+
+    <center><section id="SocialMedia">
+    <h1>Social Media
+      <div class="dropdown">
+        <div style="margin-top: 3%; margin-bottom: 2%;">
+          <i class="fa fa-linkedin" id="linkedin" style="margin-left: 2%;"></i>
+          <i class="fa fa-facebook-square" id="facebook" style="margin-right: 2%; margin-left: 2%;"></i>
+          <i class="fa fa-youtube" id="youtube" style="margin-right: 2%"></i>
+        </div>
+        <div style="margin-bottom: 3%;">
+          <i class="fa fa-instagram" id="instagram" style="margin-left: 2%;"></i>
+          <i class="fa fa-twitter" id="twitter" style="margin-right: 2%; margin-left: 2%;"></i>
+          <i class="fa fa-spotify" id="spotify" style="margin-right: 2%;"></i>
+        </div>
+
+      <iframe id="SocialIframe"
+              src="https://www.instagram.com/ficarsd/embed"
+              aling="center"
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0"
+              frameborder="0"
+              allowtransparency="true"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              scrolling="auto">
+      </iframe>
+
+      <button type="button" class="btn btn-secondary" id="SocialBtn" onclick="window.open('https://www.instagram.com/ficarsd/', '_blank');">Visit Site</button>
+    </section></center>
+
+    <script>
+      $(document).ready(function() {
+        adjustSectionWidth();
+        adjustIframeHeight();
+
+        $(window).resize(function() {
+          adjustSectionWidth();
+          adjustIframeHeight();
+        });
+
+        function adjustSectionWidth() {
+          var windowWidth = $(window).width();
+          $('#SocialMedia').css('width', windowWidth);
+        }
+
+        function adjustIframeHeight() {
+          var windowHeight = $(window).height();
+          var windowWidth = $(window).width();
+          var iframeHeight = windowHeight; // Set the desired height of the iframe
+          var iframeWidth = windowWidth;
+          $('#SocialIframe').height(iframeHeight);
+          $('#SocialIframe').width(iframeWidth);
+        }
+
+        
+        // Update iframe src and button link based on social media icon clicked
+        $('#linkedin').click(function() {
+          $('#SocialIframe').attr('src', 'https://www.linkedin.com/company/fic-arsd/');
+          $('#SocialBtn').attr('onclick', 'window.open("https://www.linkedin.com/company/fic-arsd/", "_blank");');
+        });
+
+        $('#facebook').click(function() {
+          $('#SocialIframe').attr('src', 'https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fficarsd&tabs=timeline&width=500&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId');
+          $('#SocialBtn').attr('onclick', 'window.open("https://www.facebook.com/ficarsd/", "_blank");');
+        });
+
+        $('#youtube').click(function() {
+          $('#SocialIframe').attr('src', 'https://www.youtube.com/embed/Wz4rQxQ6Zq0?autoplay=1');
+          $('#SocialBtn').attr('onclick', 'window.open("https://www.youtube.com/@financeandinvestmentcellar8832/", "_blank");');
+        });
+
+        $('#instagram').click(function() {
+          $('#SocialIframe').attr('src', 'https://www.instagram.com/ficarsd/embed');
+          $('#SocialBtn').attr('onclick', 'window.open("https://www.instagram.com/ficarsd/", "_blank");');
+        });
+
+        $('#twitter').click(function() {
+          $('#SocialIframe').attr('src', 'https://twitframe.com/show?url=https%3A%2F%2Ftwitter.com%2Ffic_arsd%2Fstatus%2F1659598442510028802%3Fs%3D20');
+          $('#SocialBtn').attr('onclick', 'window.open("https://twitter.com/fic_arsd", "_blank");');
+        });
+
+        $('#spotify').click(function() {
+          $('#SocialIframe').attr('src', 'https://open.spotify.com/embed/show/0o3f4G8SFqz1g5S59zJxUu');
+          $('#SocialBtn').attr('onclick', 'window.open("https://open.spotify.com/show/0o3f4G8SFqz1g5S59zJxUu", "_blank");');
+        });
+
+        // Open link when the button is clicked
+        $('#SocialBtn').click(function() {
+          window.open($('#SocialBtn').attr('onclick'));
+        });
+      });
+    </script>
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -312,7 +514,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>ficarsd19@.com</p>
+                <p>ficarsd19@gmail.com</p>
               </div>
 
               <div class="phone">
